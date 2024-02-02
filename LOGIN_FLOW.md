@@ -15,19 +15,19 @@ Here's my idea, specifically pertaining to Eatery's Profile:
 ## 1.1. Use a class like the following: 
 ```kotlin
 sealed class ProfileState {
-        data class Login(
-          val netid: String, 
-          val password: String, 
-          val failureMessage: String?,
-          val loading: Boolean
-        ) : State()
+    data class Login(
+      val netid: String, 
+      val password: String, 
+      val failureMessage: String?,
+      val loading: Boolean
+    ) : State()
 
-        data class Account(
-            val user: User, // Contains all user data.
-            var query: String, // Search bar query.
-            var accountFilter: AccountType // Search bar filter.
-        ) : State()
-    }
+    data class Account(
+        val user: User, // Contains all user data.
+        var query: String, // Search bar query.
+        var accountFilter: AccountType // Search bar filter.
+    ) : State()
+}
 ```
 (Don't *blindly* copy this! Tweak things around to see what's best.)
 
@@ -38,7 +38,7 @@ private var _state = MutableStateFlow<ProfileState>(State.Empty)
 val state = _state.asStateFlow()
 ```
 
-Here, `state` is a `StateFlow<ProfileState>` that the UI can read from to decide what information to show.
+Here, `state` is a `StateFlow<ProfileState>` that the UI can read from to decide what information to show. We have both `_state` and `state` for encapsulation to make the state read-only for the UI.
 
 ## 1.2. Write the UI, using your VM code.
 
