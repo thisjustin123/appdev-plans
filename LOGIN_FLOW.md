@@ -1,6 +1,8 @@
 ### This is the breakdown for Eatery's login flows, fully MVVM'd.
 
-# 1. VM $\rightarrow$ UI (Est. Time: 1-2 weeks)
+# 1. VM $\rightarrow$ UI (Est. Time: 1-3 weeks)
+
+(1-3 weeks depending on existing UI components)
 
 The first and most straightforward (but still lengthy!) part of the MVVM architecture is the interaction between the **viewmodel** and its corresponding **UI** components.
 
